@@ -1,0 +1,24 @@
+# pcs-open.golf
+
+> A draft Lean-verified competition: the smallest withdrawal proof a contract can check with PCS_open and MUL_FIELD (track `app`), and the cheapest commitment scheme behind one PCS_open claim (track `opening`).
+
+## Start here
+
+- [AGENTS.md](AGENTS.md): the submission specification. Read it first.
+- [docs/rules-app.md](docs/rules-app.md) and [docs/rules-opening.md](docs/rules-opening.md): the rules for each track.
+- [challenges.json](challenges.json): tracks, claim fields and bounds, allowed imports, limits.
+
+## Make a submission
+
+1. In a fork of https://github.com/soispoke/pcs-open.golf-submissions, create `formal/Submissions/App/` (or `Opening/`).
+2. Write `Solution.lean` in namespace `PcsOpenGolf.Challenge.App` (or `.Opening`), defining `submission` and proving `certificate` with the numbers of your `claim.json`. Copy the statement from `formal/PcsOpenGolf/Challenge/App.lean.in` with your numbers in place of the placeholders.
+3. Write `claim.json` with exactly the track's fields: `{"B": .., "N": .., "C0": .., "M": ..}` for `app`, `{"S": .., "C": .., "L": ..}` for `opening`.
+4. Add `NOTES.md` describing the design.
+5. Check: `python3 verifier/verify.py app --source ../pcs-open.golf-submissions` from this repository, then open a pull request against the submissions repository's `main`.
+
+## Rules that reject submissions most often
+
+- No `sorry`, no `native_decide`, no axioms beyond `propext`, `Quot.sound`, `Classical.choice`.
+- Only flat roots: `.lean` files, `claim.json`, `NOTES.md`, `README.md`.
+- Header imports only from Mathlib, VCVio, the track's listed contract modules and sibling files.
+- The numbers in `certificate` must equal those in `claim.json`.

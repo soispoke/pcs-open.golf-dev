@@ -1,0 +1,19 @@
+import PcsOpenGolf.Opening.Statements
+
+/-! Opening track: a polynomial commitment scheme behind one `PCS_open` claim. The rules are in
+`docs/rules-opening.md`. The three numbers in `certificate` come from the entry's `claim.json`:
+opening bytes `S` and verification cycles `C` on the scored instance, and the list size `L` in
+bits. The score is `S × C`. -/
+
+namespace PcsOpenGolf.Challenge.Opening
+
+/-- The entry: commit and open, the verifier image and layout, the extractor and the
+simulator. -/
+noncomputable def submission : PcsOpenGolf.Opening.Scheme := sorry
+
+/-- Admission, completeness, cost, opening size, evaluation soundness, zero knowledge and
+termination for the declared numbers. -/
+theorem certificate : PcsOpenGolf.Opening.Certificate submission
+    { openingBytes := {{S}}, cycles := {{C}}, listBits := {{L}} } := sorry
+
+end PcsOpenGolf.Challenge.Opening

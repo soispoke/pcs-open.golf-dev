@@ -1,0 +1,19 @@
+import PcsOpenGolf.Statements
+
+/-! App track: a withdrawal proof checked by a contract that delegates openings to `PCS_open`.
+The rules are in `docs/rules-app.md`. The four numbers in `certificate` come from the entry's
+`claim.json`: proof bytes `B`, claims `N`, cycles outside claims `C₀`, and claims on proof roots
+`M`. The score, `B × (C₀ + N × CLAIM_CYCLES)`, uses the published price in `scoring.json`. -/
+
+namespace PcsOpenGolf.Challenge.App
+
+/-- The entry: verifier image and layout, fixed polynomials, honest prover, extractor and
+simulator. -/
+noncomputable def submission : PcsOpenGolf.Submission := sorry
+
+/-- Admission, completeness, cost, knowledge soundness, zero knowledge and termination for the
+declared numbers. -/
+theorem certificate : PcsOpenGolf.Certificate submission
+    { proofBytes := {{B}}, claims := {{N}}, cycles := {{C0}}, proofRoots := {{M}} } := sorry
+
+end PcsOpenGolf.Challenge.App

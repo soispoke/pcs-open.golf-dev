@@ -1,0 +1,6 @@
+formal/.lake/
+__pycache__/
+verifier/.tools/
+formal/PcsOpenGolf/Challenge/*.lean
+.work/
+.build/

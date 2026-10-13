@@ -1,0 +1,8 @@
+{
+  "challenge_module": "PcsOpenGolf.Challenge.App",
+  "solution_module": "Submissions.App.Solution",
+  "theorem_names": ["PcsOpenGolf.Challenge.App.certificate"],
+  "definition_names": ["PcsOpenGolf.Challenge.App.submission"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": false
+}

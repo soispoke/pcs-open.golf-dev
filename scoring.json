@@ -1,0 +1,11 @@
+{
+  "note": "Published prices. Not part of the pinned contract: certificates prove B, N, C0 and M, and the leaderboard applies the price in force. Organizers announce a new set before its date.",
+  "parameter_sets": [
+    {
+      "id": "P0",
+      "from": "2026-10-13",
+      "CLAIM_CYCLES": 6500,
+      "basis": "Estimate for leanVM's hiding WHIR at 2^20 words and rate 1/4: about 3,600 BLAKE2s compressions per opening, priced at EIP-8288's leanSPHINCS rate (3,000 gas for 531 compressions), about 20,000 gas at 3 gas per cycle. Replaced once the opening track has a verified record."
+    }
+  ]
+}

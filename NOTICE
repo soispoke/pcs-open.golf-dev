@@ -1,0 +1,22 @@
+pcs-open.golf
+Copyright 2026 the pcs-open.golf contributors
+
+This product includes material adapted from the following Apache-2.0 licensed projects:
+
+  sig.golf (https://github.com/Layr-Labs/sig.golf), commit
+  ab2a83afca059144abc35a2937887b0707110b76: the RV64IM machine definition and its Lean
+  semantics (formal/PcsOpenGolf/Rv64.lean), the structure of the contract and its statements,
+  the claim.json convention, and the layout of the Lean project.
+
+  ots.golf-dev (leanEthereum/ots.golf-dev), commit
+  8b140a99afa5b3e0bc785ab202c7b0a9c1f7fe7c: the verifier pipeline and its helpers
+  (verifier/verify.py, check_submission.py, pin_contract.py, render_challenge.py,
+  linux_exec.py, linux_storage.py, source_archive.py, check_linux_sandbox.py, setup_tools.sh),
+  the axiom audit (formal/scripts/check-axioms.lean), the challenge-stub mechanism and the
+  repository layout.
+
+Modifications: names and paths changed to pcs-open.golf; claims carry several named integers
+read from claim.json instead of one integer; the stubs render one placeholder per claim field;
+scores are computed from a published price kept outside the pinned contract; the axiom audit
+checks every declaration of the protected modules; ots.golf's program-size measurements and
+service are not included.
