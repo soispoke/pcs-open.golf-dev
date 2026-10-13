@@ -17,7 +17,7 @@ This repository, **pcs-open.golf-dev**, is the core: the Lean contract and the v
 
 ```sh
 verifier/setup_tools.sh
-(cd formal && lake build && lake env lean scripts/check-axioms.lean && lake env lean PcsOpenGolfTests.lean)
+(cd formal && lake exe cache get && lake build && lake env lean scripts/check-axioms.lean && lake env lean PcsOpenGolfTests.lean)
 python3 verifier/verify.py app --source ../pcs-open.golf-submissions
 ```
 

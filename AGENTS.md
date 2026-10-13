@@ -100,7 +100,7 @@ From this repository, with a submissions checkout next to it:
 
 ```sh
 verifier/setup_tools.sh                                                  # once: comparator, lean4export
-(cd formal && lake build && lake env lean scripts/check-axioms.lean)     # the contract and its audit
+(cd formal && lake exe cache get && lake build && lake env lean scripts/check-axioms.lean)   # Mathlib cache, contract, audit
 python3 verifier/check_submission.py app --root ../pcs-open.golf-submissions   # policy only
 python3 verifier/verify.py app --source ../pcs-open.golf-submissions          # the full pipeline
 ```
@@ -119,7 +119,7 @@ After editing any protected file, re-pin and re-audit:
 
 ```sh
 python3 verifier/pin_contract.py pin
-(cd formal && lake build && lake env lean scripts/check-axioms.lean && lake env lean PcsOpenGolfTests.lean)
+(cd formal && lake exe cache get && lake build && lake env lean scripts/check-axioms.lean && lake env lean PcsOpenGolfTests.lean)
 python3 -m unittest discover -s verifier/tests
 ```
 
